@@ -1,0 +1,26 @@
+services:
+  blog_demo:
+    image: blog_demo
+    ports: 
+      - "3000:3000"
+    depends_on:
+      - postgres
+    environment:
+      - RAILS_MASTER_KEY=8e3faf45c17bfa4fbadabbae562950c4
+      - DB_HOST=postgres
+      - DB_USERNAME=sammy
+      - DB_PASSWORD=sammy
+      - RAILS_ENV=development
+    volumes:
+      - .:/rails
+    command: bundle exec rails s -b 0.0.0.0
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
