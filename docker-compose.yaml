@@ -1,5 +1,6 @@
 services:
   blog_demo:
+    build: .
     image: blog_demo
     ports: 
       - "3000:3000"
