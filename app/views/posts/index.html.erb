@@ -1,4 +1,6 @@
-<p style="color: green"><%= notice %></p>
+<% if notice %>
+  <p style="color: green"><%= notice %></p>
+<% end %>
 <% content_for :title, "Posts" %>
 <div class="container">
   <h1>Posts</h1>
