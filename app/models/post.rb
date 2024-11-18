@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   validates :body, presence: true, length: { minimum: 10, maximum: 1000 }
   validates :published_at, presence: true
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   before_validation :set_published_at, on: :create
 
