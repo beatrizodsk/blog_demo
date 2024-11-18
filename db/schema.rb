@@ -22,11 +22,4 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_18_013443) do
     t.datetime "published_at"
     t.integer "views", default: 0
   end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 end
